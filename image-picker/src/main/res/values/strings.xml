@@ -1,0 +1,19 @@
+<resources>
+    <string name="message_to_drag_up">Hochziehen für Galerie</string>
+    <string name="ok">OK</string>
+    <string name="recent">Kürzlich</string>
+    <string name="last_month">Letzer Monat</string>
+    <string name="last_week">Letzte Woche</string>
+    <string name="enter_text">Text eingeben</string>
+    <string name="images_dont_exist">Keines der von dir ausgewählten Bilder existiert mehr.</string>
+    <string name="cancel">Abbrechen</string>
+    <string name="finished">Fertig</string>
+    <plurals name="select_image">
+        <item quantity="one">Bild auswählen</item>
+        <item quantity="other">Bilder auswählen</item>
+    </plurals>
+    <plurals name="selected">
+        <item quantity="one">1 Bild ausgewählt</item>
+        <item quantity="other">%d Bilder ausgewählt</item>
+    </plurals>
+</resources>

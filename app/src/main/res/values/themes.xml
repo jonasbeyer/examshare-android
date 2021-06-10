@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.ExamShare" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="ratingBarStyle">@style/Widget.ExamShare.RatingBar</item>
+        <item name="borderlessButtonStyle">@style/Widget.ExamShare.Button.TextButton</item>
+        <item name="toolbarStyle">@style/Widget.ExamShare.Toolbar</item>
+        <item name="tabStyle">@style/Widget.ExamShare.TabLayout</item>
+        <item name="textInputStyle">@style/Widget.ExamShare.TextInputLayout</item>
+    </style>
+
+    <style name="Theme.ExamShare.NoActionBar" parent="Theme.ExamShare">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.ExamShare.Launcher" parent="Theme.ExamShare">
+        <item name="android:windowBackground">@drawable/launch_background</item>
+    </style>
+
+    <style name="Theme.ExamShare.FullImage" parent="Theme.ExamShare">
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:homeAsUpIndicator">@drawable/ic_arrow_back</item>
+        <item name="actionBarStyle">@style/TransparentActionBar</item>
+        <item name="android:actionBarStyle">@style/TransparentActionBar</item>
+        <item name="android:actionOverflowButtonStyle">@style/ImageViewOverflow</item>
+        <item name="actionOverflowMenuStyle">@style/OverflowMenuStyle</item>
+    </style>
+
+    <style name="ThemeOverlay.ExamShare.AppBar" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar" />
+
+    <style name="ThemeOverlay.ExamShare.Popup" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="ThemeOverlay.ExamShare.Dialog.Progress" parent="ThemeOverlay.MaterialComponents.Dialog.Alert">
+        <item name="android:windowBackground">@color/transparent</item>
+    </style>
+</resources>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+                name="viewModel"
+                type="de.twisted.examshare.ui.signup.SignUpViewModel" />
+    </data>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical"
+            tools:context=".ui.signup.SignUpActivity">
+
+        <include
+                android:id="@+id/include_default_app_bar"
+                layout="@layout/include_default_app_bar" />
+
+        <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fadeScrollbars="false"
+                android:scrollbarFadeDuration="0">
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:orientation="vertical">
+
+                <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="25dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/username"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableStart="@drawable/ic_person"
+                            android:drawablePadding="20dp"
+                            android:hint="@string/username"
+                            android:inputType="textNoSuggestions"
+                            android:maxLength="@integer/max_username_length"
+                            app:validation="@={viewModel.username}"
+                            app:validationErrorMode="@{viewModel.errorMode}"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/email"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableStart="@drawable/ic_email"
+                            android:drawablePadding="20dp"
+                            android:hint="@string/email"
+                            android:inputType="textEmailAddress"
+                            android:maxLength="@integer/max_email_length"
+                            app:validation="@={viewModel.email}"
+                            app:validationErrorMode="@{viewModel.errorMode}"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/passwordLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        app:passwordToggleEnabled="true">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/password"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableStart="@drawable/ic_password"
+                            android:drawablePadding="20dp"
+                            android:hint="@string/password"
+                            android:inputType="textPassword"
+                            app:validation="@={viewModel.password}"
+                            app:validationErrorMode="@{viewModel.errorMode}"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                        android:id="@+id/age_restriction"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="-7dp"
+                        android:layout_marginTop="35dp"
+                        android:text="@string/age_restriction"
+                        android:textSize="15sp" />
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                        android:id="@+id/accept_privacy_policy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="-7dp"
+                        android:layout_marginTop="13dp"
+                        android:text="@string/accept_privacy_policy"
+                        android:textSize="15sp" />
+
+                <com.google.android.material.button.MaterialButton
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/shape_button"
+                        android:text="@string/register"
+                        android:textColor="@android:color/white"
+                        android:onClick="@{() -> viewModel.signUp()}"/>
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+</layout>

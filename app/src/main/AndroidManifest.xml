@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        package="de.twisted.examshare">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <application
+            android:name=".ExamShareApplication"
+            android:allowBackup="true"
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/app_name"
+            android:roundIcon="@mipmap/ic_launcher_round"
+            android:supportsRtl="true"
+            android:theme="@style/Theme.ExamShare"
+            tools:replace="android:theme">
+        <activity
+                android:name=".ui.LauncherActivity"
+                android:theme="@style/Theme.ExamShare.Launcher">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+                android:name=".ui.main.MainActivity"
+                android:theme="@style/Theme.ExamShare.NoActionBar" />
+        <activity android:name=".ui.signin.SignInActivity" />
+        <activity
+                android:name=".ui.subject.SubjectActivity"
+                android:parentActivityName=".ui.main.MainActivity"
+                android:theme="@style/Theme.ExamShare.NoActionBar" />
+        <activity
+                android:name=".ui.addedittask.AddEditTaskActivity"
+                android:label="@string/create_task" />
+        <activity
+                android:name=".ui.signup.SignUpActivity"
+                android:label="@string/create_account"
+                android:theme="@style/Theme.ExamShare.NoActionBar" />
+        <activity
+                android:name=".ui.taskdetails.TaskDetailsActivity"
+                android:parentActivityName=".ui.subject.SubjectActivity"
+                android:theme="@style/Theme.ExamShare.NoActionBar" />
+        <activity
+                android:name=".ui.taskdetails.TaskFullImageActivity"
+                android:theme="@style/Theme.ExamShare.FullImage" />
+        <activity
+                android:name=".ui.settings.SettingsActivity"
+                android:label="@string/title_settings" />
+        <activity
+                android:name=".ui.account.AccountActivity"
+                android:label="@string/account_properties"
+                android:theme="@style/Theme.ExamShare.NoActionBar" />
+        <activity
+                android:name=".ui.tasklist.TaskListActivity"
+                android:theme="@style/Theme.ExamShare.NoActionBar" />
+        <activity
+                android:name=".ui.signin.reset.ResetPasswordActivity"
+                android:launchMode="singleTask"
+                android:theme="@style/Theme.ExamShare.Launcher">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                        android:host="examshare.twisted-it.de"
+                        android:pathPrefix="/verify/email/"
+                        android:scheme="https" />
+            </intent-filter>
+        </activity>
+        <activity
+                android:name=".ui.signin.find.RequestPasswordResetActivity"
+                android:label="@string/reset_password"
+                android:theme="@style/Theme.ExamShare.NoActionBar" />
+        <activity
+                android:name=".ui.addedittask.UpdateActivity"
+                android:theme="@style/Theme.ExamShare.NoActionBar" />
+        <activity
+                android:name=".ui.commentdetails.CommentDetailsActivity"
+                android:label="@string/show_comment"
+                android:parentActivityName=".ui.taskdetails.TaskDetailsActivity" />
+
+        <service
+                android:name=".service.firebase.MessagingService"
+                android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <service
+                android:name=".service.task.TaskUploadService"
+                android:stopWithTask="false" />
+
+        <receiver
+                android:name=".receiver.TaskNotificationReceiver"
+                android:exported="false">
+            <intent-filter>
+                <action android:name="TaskNotification" />
+            </intent-filter>
+        </receiver>
+
+        <receiver
+                android:name=".receiver.CommentNotificationReceiver"
+                android:exported="false">
+            <intent-filter>
+                <action android:name="CommentNotification" />
+            </intent-filter>
+        </receiver>
+
+        <receiver
+                android:name=".receiver.NotificationReceiver"
+                android:exported="false">
+            <intent-filter>
+                <action android:name="Notification" />
+            </intent-filter>
+        </receiver>
+
+        <provider
+                android:name="androidx.core.content.FileProvider"
+                android:authorities="de.twisted.examshare.fileprovider"
+                android:exported="false"
+                android:grantUriPermissions="true">
+            <meta-data
+                    android:name="android.support.FILE_PROVIDER_PATHS"
+                    android:resource="@xml/file_paths" />
+        </provider>
+
+    </application>
+
+</manifest>

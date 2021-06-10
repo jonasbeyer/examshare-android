@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"
+        tools:context=".imageeditengine.ImageEditActivity">
+
+    <de.twisted.imagepicker.imageeditengine.views.imagezoom.ImageViewTouch
+            android:id="@+id/image_iv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:layout_gravity="center"/>
+
+    <de.twisted.imagepicker.imageeditengine.views.PhotoEditorView
+            android:id="@+id/photo_editor_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:layout_marginTop="-2dp"
+            style="?android:attr/progressBarStyleHorizontal"/>
+
+    <RelativeLayout
+            android:id="@+id/toolbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp">
+
+        <ImageView
+                android:id="@+id/back_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:src="@drawable/ic_cam_back"/>
+
+        <ImageView
+                android:id="@+id/reset_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/crop_btn"
+                android:layout_toStartOf="@+id/crop_btn"
+                android:padding="8dp"
+                android:src="@drawable/ic_cam_delete"
+                android:visibility="gone"/>
+
+        <ImageView
+                android:id="@+id/crop_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_toLeftOf="@+id/paint_btn"
+                android:layout_toStartOf="@+id/paint_btn"
+                android:padding="8dp"
+                android:visibility="gone"
+                android:src="@drawable/ic_cam_crop_rotate"/>
+
+        <ImageView
+                android:id="@+id/paint_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:padding="8dp"
+                android:visibility="gone"
+                android:src="@drawable/ic_cam_draw"/>
+
+        <de.twisted.imagepicker.imageeditengine.views.VerticalSlideColorPicker
+                android:id="@+id/color_picker_view"
+                android:layout_width="20dp"
+                android:layout_height="180dp"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@+id/paint_btn"
+                android:layout_marginEnd="25dp"
+                android:layout_marginTop="10dp"
+                android:visibility="invisible"
+                app:defaultColor="@color/white"/>
+    </RelativeLayout>
+
+    <FrameLayout
+            android:id="@+id/done_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:visibility="gone"
+            android:layout_margin="@dimen/done_btn_margin">
+
+        <ImageView
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:background="@drawable/circular_button"
+                android:padding="12dp"
+                app:srcCompat="@drawable/ic_check_black"/>
+
+        <TextView
+                android:id="@+id/img_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|bottom"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:padding="5dp"
+                android:textColor="#fff"
+                android:textSize="11sp"/>
+    </FrameLayout>
+
+</RelativeLayout>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_height="match_parent"
+        android:scrollbarFadeDuration="0"
+        android:fadeScrollbars="false"
+        android:layout_width="match_parent">
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:paddingStart="25dp"
+            android:paddingEnd="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+<!--        <de.twisted.examshare.ui.shared.widgets.materialedittext.MaterialDropDownInput-->
+<!--                android:id="@+id/schoolForm"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:singleLine="true"-->
+<!--                android:layout_marginTop="15dp"-->
+<!--                android:imeOptions="actionNext"-->
+<!--                android:hint="@string/school_form_hint"-->
+<!--                app:met_floatingLabel="highlight"-->
+<!--                app:met_clearButton="true"-->
+<!--                app:met_primaryColor="@color/colorAccent"/>-->
+
+<!--        <de.twisted.examshare.ui.shared.widgets.materialedittext.MaterialDropDownInput-->
+<!--                android:id="@+id/federalState"-->
+<!--                android:layout_marginTop="12dp"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:singleLine="true"-->
+<!--                android:imeOptions="actionNext"-->
+<!--                android:hint="@string/federal_state_hint"-->
+<!--                app:met_floatingLabel="highlight"-->
+<!--                app:met_clearButton="true"-->
+<!--                app:met_primaryColor="@color/colorAccent"/>-->
+
+<!--        <de.twisted.examshare.ui.shared.widgets.materialedittext.MaterialDropDownInput-->
+<!--                android:id="@+id/grade"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_marginTop="12dp"-->
+<!--                android:hint="@string/grade_hint"-->
+<!--                app:met_floatingLabel="highlight"-->
+<!--                app:met_clearButton="true"-->
+<!--                app:met_primaryColor="@color/colorAccent"/>-->
+
+<!--        <de.twisted.examshare.ui.shared.widgets.materialedittext.MaterialEditText-->
+<!--                android:id="@+id/creator"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="12dp"-->
+<!--                android:singleLine="true"-->
+<!--                android:inputType="textNoSuggestions"-->
+<!--                android:hint="@string/creator_hint"-->
+<!--                app:met_floatingLabel="highlight"-->
+<!--                app:met_clearButton="true"-->
+<!--                app:met_primaryColor="@color/colorAccent"/>-->
+
+        <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="3dp">
+
+            <TableRow
+                    android:layout_marginTop="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                        android:text="@string/upload_date"
+                        android:textSize="16sp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="15dp"/>
+
+                <de.twisted.examshare.ui.shared.widgets.ExamSpinner
+                        android:layout_weight="1"
+                        android:layout_gravity="center_vertical"
+                        android:id="@+id/uploadData"/>
+            </TableRow>
+            <TableRow
+                    android:layout_marginTop="-2dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                        android:id="@+id/sortHint"
+                        android:text="@string/sort_by_hint"
+                        android:textSize="16sp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="15dp"/>
+
+                <de.twisted.examshare.ui.shared.widgets.ExamSpinner
+                        android:layout_weight="1"
+                        android:layout_gravity="center_vertical"
+                        android:id="@+id/sortOrder"/>
+
+            </TableRow>
+        </TableLayout>
+
+    </LinearLayout>
+</ScrollView>

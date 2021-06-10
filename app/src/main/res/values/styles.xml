@@ -1,0 +1,56 @@
+<resources>
+
+    <style name="TextAppearance.ExamShare.Tab" parent="TextAppearance.Design.Tab">
+        <item name="textAllCaps">false</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="TextAppearance.ExamShare.SectionHeader" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">?android:textColorSecondary</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="Widget.ExamShare" parent="" />
+
+    <style name="Widget.ExamShare.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox" />
+
+    <style name="Widget.ExamShare.TabLayout" parent="Widget.MaterialComponents.TabLayout.PrimarySurface" />
+
+    <style name="Widget.ExamShare.Button.TextButton" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="Widget.ExamShare.Toolbar" parent="Widget.MaterialComponents.Toolbar">
+        <item name="popupTheme">@style/ThemeOverlay.ExamShare.Popup</item>
+    </style>
+
+    <style name="CommentInput" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:windowBackground">@null</item>
+        <item name="android:windowExitAnimation">@null</item>
+    </style>
+
+    <style name="Widget.ExamShare.RatingBar" parent="android:Widget.Material.RatingBar">
+        <item name="android:progressTint">@color/ratingBarColor</item>
+    </style>
+
+    <style name="TransparentActionBar" parent="Widget.AppCompat.Light.ActionBar.Solid.Inverse">
+        <item name="background">@android:color/transparent</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="ImageViewOverflow" parent="android:style/Widget.Holo.ActionButton.Overflow">
+        <item name="android:src">@drawable/ic_more_vert_48dp</item>
+    </style>
+
+    <style name="OverflowMenuStyle" parent="Widget.AppCompat.PopupMenu.Overflow">
+        <item name="android:dropDownVerticalOffset">4dp</item>
+    </style>
+
+    <style name="CustomActivityAnimation" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/activity_open_enter</item>
+        <item name="android:activityOpenExitAnimation">@anim/noanim</item>
+        <item name="android:activityCloseEnterAnimation">@anim/noanim</item>
+        <item name="android:activityCloseExitAnimation">@anim/activity_close_exit</item>
+    </style>
+</resources>

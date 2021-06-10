@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#ef7c09</color>
+    <color name="colorPrimaryDark">#c1620d</color>
+    <color name="colorAccent">#ff8a16</color>
+    <color name="tabColor">#dd730b</color>
+    <color name="ratingBarColor">#ffd800</color>
+    <color name="orange">#e29922</color>
+    <color name="colorDefault">#9E9E9E</color>
+    <color name="transparent_black">#94333232</color>
+    <color name="darker_gray">#aaa</color>
+    <color name="light_grey">#e2dede</color>
+    <color name="unselected">#7f8c8d</color>
+    <color name="colorSuccess">#32b548</color>
+    <color name="colorError">#cc2828</color>
+
+    <color name="transparent">@android:color/transparent</color>
+</resources>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+                name="viewModel"
+                type="de.twisted.examshare.ui.tasklist.TaskListViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/appBarLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/ThemeOverlay.ExamShare.AppBar"
+                app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize">
+
+                <de.twisted.examshare.ui.shared.widgets.ExamSpinner
+                        android:id="@+id/spinner"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        app:popupTheme="@style/ThemeOverlay.ExamShare.Popup" />
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:visible="@{viewModel.isLoading}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/appBarLayout"
+                tools:visibility="gone"/>
+
+        <de.twisted.examshare.ui.shared.widgets.CustomSwipeRefreshLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/appBarLayout"
+                app:refreshing="@{viewModel.swipeRefreshing}"
+                app:onRefreshListener="@{() -> viewModel.onSwipeRefresh()}">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                <!--                <de.twisted.examshare.ui.shared.widgets.ExamListView-->
+                <!--                        android:id="@+id/tasks"-->
+                <!--                        android:layout_width="match_parent"-->
+                <!--                        android:layout_height="wrap_content"-->
+                <!--                        android:clipToPadding="false"-->
+                <!--                        android:divider="@android:color/transparent"-->
+                <!--                        android:dividerHeight="8dp"-->
+                <!--                        android:nestedScrollingEnabled="true"-->
+                <!--                        android:overScrollMode="never"-->
+                <!--                        android:paddingStart="10dp"-->
+                <!--                        android:paddingTop="10dp"-->
+                <!--                        android:paddingEnd="10dp"-->
+                <!--                        android:paddingBottom="2dp"-->
+                <!--                        android:scrollbarStyle="outsideOverlay"-->
+                <!--                        app:layout_constraintTop_toTopOf="parent" />-->
+
+                <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recycler_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clipToPadding="false"
+                        android:nestedScrollingEnabled="true"
+                        android:paddingStart="10dp"
+                        android:paddingTop="10dp"
+                        android:paddingEnd="10dp"
+                        android:paddingBottom="2dp"
+                        android:scrollbarStyle="outsideOverlay"
+                        app:items="@{viewModel.taskList}"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:listitem="@layout/item_task"/>
+
+                <include
+                        android:id="@+id/errorView"
+                        layout="@layout/include_no_result"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.45" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </de.twisted.examshare.ui.shared.widgets.CustomSwipeRefreshLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

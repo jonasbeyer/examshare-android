@@ -1,0 +1,283 @@
+<resources>
+    <string name="app_name" translatable="false">ExamShare</string>
+    <string name="login">Einloggen</string>
+    <string name="login_name">Benutzername oder E-Mail</string>
+    <string name="no_account">Noch kein Benutzerkonto?</string>
+    <string name="password">Passwort</string>
+    <string name="repeat_password">Passwort wiederholen</string>
+    <string name="register">Registrieren</string>
+    <string name="create_account">Konto erstellen</string>
+    <string name="an_error_occurred">Es ist ein Fehler aufgetreten.</string>
+    <string name="connection_error">Es ist ein Verbindungsfehler aufgetreten.</string>
+    <string name="connection_error_retry">Es ist ein Verbindungsfehler aufgetreten. Versuche es bitte später erneut.</string>
+    <string name="server_error">Es ist ein interner Serverfehler aufgetreten.</string>
+    <string name="processing_error">Es ist ein Verarbeitungsfehler aufgetreten.</string>
+    <string name="no_internet_connection">Keine Internetverbindung</string>
+    <string name="general_notifications">Allgemeine Benachrichtigungen</string>
+    <string name="task_title">Übungstitel</string>
+    <string name="keywords">Themenschwerpunkte</string>
+    <string name="keyword_hint">Neues Stichwort</string>
+    <string name="add_images">Bilder hinzufügen</string>
+    <string name="choose_pictures">Bilder auswählen</string>
+    <string name="username">Benutzername</string>
+    <string name="email">E-Mail-Adresse</string>
+    <string name="default_email">%s (Standard)</string>
+    <string name="title_settings">Einstellungen</string>
+    <string name="search_hint">Schlüsselbegriff</string>
+    <string name="logout">Abmelden</string>
+    <string name="search_filter">Suchfilter</string>
+    <string name="upload_date">Uploaddatum:</string>
+    <plurals name="pictures_selected">
+        <item quantity="one">%d Bild ausgewählt</item>
+        <item quantity="other">%d Bilder ausgewählt</item>
+    </plurals>
+    <plurals name="show_answer">
+        <item quantity="one">Antwort anzeigen</item>
+        <item quantity="other">Antworten anzeigen</item>
+    </plurals>
+    <string name="published_by">Veröffentlicht von %s</string>
+    <string name="content">Themen: %s</string>
+    <string name="subject_dyn">Schulfach: %s</string>
+    <string name="last_entries">Letzte Einträge:</string>
+    <string name="search_result">Suchergebnisse für: %s</string>
+    <string name="check_connection">Überprüfe die Verbindung</string>
+    <string name="ok">Bestätigen</string>
+    <string name="task_images">Aufgabenblätter</string>
+    <string name="task_images_count">Aufgaben (%d)</string>
+    <string name="solution_images">Lösungsblätter</string>
+    <string name="solution_images_count">Lösungen (%d)</string>
+    <string name="comments">Kommentare</string>
+    <string name="show_comment">Kommentar anzeigen</string>
+    <string name="publish">Veröffentlichen</string>
+    <string name="add_comment">Kommentar schreiben</string>
+    <string name="added_comment">Kommentar hinzugefügt</string>
+    <string name="edited_comment">Kommentar bearbeitet</string>
+    <string name="deleted_comment">Kommentar entfernt</string>
+    <string name="comment_title">%s • %s</string>
+    <string name="no_comments">Keine Kommentare gefunden</string>
+    <string name="no_results">Keine Übungen gefunden</string>
+    <string name="no_results_hint">Benutze ein anderes Stichwort oder lade selbst eine neue Übung hoch.</string>
+    <string name="no_comments_hint">Schreibe einen Kommentar, um Fragen zu stellen oder Hinweise zu geben.</string>
+    <string name="no_tasks_found">Es konnten keine Übungen gefunden werden.</string>
+    <string name="create_task">Übung erstellen</string>
+    <string name="privacy_policy">Datenschutzerklärung</string>
+    <string name="age_restriction">Ich bin mind. 16 Jahre alt oder verfüge über die Einverständnis meiner Eltern.
+    </string>
+    <string name="update_required">Aktualisierung notwendig</string>
+    <string name="accept_privacy_policy">Ich habe die
+        <![CDATA[<a href="https://examshare.twisted-it.de/datenschutzerklaerung">Datenschutzerklärung</a>]]> sowie die
+        <![CDATA[<a href="https://examshare.twisted-it.de/agb">AGB</a>]]> gelesen und
+        stimme diesen zu.
+    </string>
+    <string name="verify_email">Zur Überprüfung wurde eine E-Mail an die angegebene Adresse gesendet. Überprüfe auch
+        den Spam-Ordner oder melde dich an, um die E-Mail erneut zu senden.
+    </string>
+    <string name="show_user_profile">Profil ansehen</string>
+    <string name="my">Meine</string>
+    <string name="title_my_tasks">Meine Übungen</string>
+    <string name="title_my_favorites">Meine Favoriten</string>
+    <string name="owners_tasks">%s Übungen</string>
+    <string name="owners_favorites">%s Favoriten</string>
+    <string name="two_keywords_required">Es müssen mindestens zwei Stichwörter hinzugefügt werden.</string>
+    <string name="one_task_image_required">Es muss mindestens ein Aufgabenbild hinzugefügt werden.</string>
+    <string name="title_user_account">Benutzerkonto</string>
+    <string name="my_account">Mein Benutzerkonto</string>
+    <string name="no_access">Kein Zugriff gestattet</string>
+    <string name="no_access_hint">Das Benutzerkonto wurde deaktiviert oder die öffentliche Einsicht ausgeschaltet.</string>
+    <string name="tasks_count">Einträge:</string>
+    <string name="account_properties">Kontoeinstellungen</string>
+    <string name="property_public">Öffentliche Einsicht deines Benutzerkontos</string>
+    <string name="property_notifications">Benachrichtigungen für neue Kommentare oder Antworten</string>
+    <string name="passwords_not_equal">Passwörter nicht identisch</string>
+    <string name="account_role">Rolle:</string>
+    <string name="my_account_role">Meine Rolle:</string>
+    <string name="exit">Beenden</string>
+    <string name="changed_account_properties">Einstellungen des Benutzerkontos geändert</string>
+    <string name="key_private">privat</string>
+    <string name="key_public">öffentlich</string>
+    <string name="share_action">Aktion auswählen</string>
+    <string name="notifications_enabled">Benachrichtigungen aktiviert</string>
+    <string name="notifications_disabled">Benachrichtigungen deaktiviert</string>
+    <string name="activated">aktiviert</string>
+    <string name="task_not_exist">Diese Übung existiert nicht mehr</string>
+    <string name="comment_not_exist">Dieser Kommentar existiert nicht mehr</string>
+    <string name="deactivated">deaktiviert</string>
+    <string name="updated">(bearbeitet)</string>
+    <string name="wait_for_publishing">Warten auf Veröffentlichung&#8230;</string>
+    <string name="favorite_add">Zu den Favoriten hinzugefügt</string>
+    <string name="favorite_remove">Von den Favoriten entfernt</string>
+    <string name="favorite_error">Fehler beim Ändern des Favoritenstatus</string>
+    <string name="task_publishing">Übung wird veröffentlicht&#8230;</string>
+    <string name="task_published">Übung veröffentlicht</string>
+    <string name="rating">Bewertung:</string>
+    <string name="account_actions">Kontoaktionen</string>
+    <string name="view_tasks">Übungen ansehen</string>
+    <string name="show_contributions">Beiträge anzeigen</string>
+    <string name="show_favorites">Favoriten anzeigen</string>
+    <string name="change_password">Passwort ändern</string>
+    <string name="change_email">E-Mail-Adresse ändern</string>
+    <string name="enter_new_email">Neue E-Mail-Adresse eingeben</string>
+    <string name="disable_account">Benutzerkonto deaktivieren</string>
+    <string name="define_new_password">Neues Passwort festlegen</string>
+    <string name="old_password">Altes Passwort</string>
+    <string name="new_password">Neues Passwort</string>
+    <string name="confirm_new_password">Passwort bestätigen</string>
+    <string name="please_wait">Bitte warten…</string>
+    <string name="reset_password">Passwort zurücksetzen</string>
+    <string name="reset_password_confirmation">Ein Link zum Zurücksetzen des Passworts wurde gesendet, falls die E-Mail-Adresse existiert. Überprüfe auch deinen Spam-Ordner.</string>
+    <string name="send_verification_link">Bestätigungslink senden</string>
+    <string name="verification">Verifizierung</string>
+    <string name="send_again">Erneut senden</string>
+    <string name="send_email">E-Mail senden</string>
+    <string name="forgotten">Vergessen?</string>
+    <string name="report">Melden</string>
+    <string name="details">Details</string>
+    <string name="edit">Bearbeiten</string>
+    <string name="delete">Löschen</string>
+    <string name="pin">Anheften</string>
+    <string name="confirm_delete_task">Übung wird gelöscht. Fortfahren?</string>
+    <string name="confirm_delete_comment">Kommentar wird gelöscht. Fortfahren?</string>
+    <string name="confirm_logout">Möchtest du dich wirklich von deinem Konto abmelden?</string>
+    <string-array name="search_options">
+        <item>Heute</item>
+        <item>Diese Woche</item>
+        <item>Diesen Monat</item>
+        <item>Dieses Jahr</item>
+    </string-array>
+    <string name="just_now">Gerade eben</string>
+    <string name="update">Aktualisieren</string>
+    <string name="yes">Ja</string>
+    <string name="no">Nein</string>
+    <string name="search_task">Übung suchen</string>
+    <string name="enter_password">Passwort eingeben</string>
+    <string name="close">Schließen</string>
+    <string name="loading">Laden</string>
+    <string name="loading_dots">Laden&#8230;</string>
+    <string-array name="report_reasons">
+        <item>Spam oder Werbung</item>
+        <item>Hassrede oder -symbole</item>
+        <item>Pornografische Inhalte</item>
+        <item>Belästigung oder Mobbing</item>
+        <item>Urheberrechtsverletzung</item>
+    </string-array>
+    <string name="choose_reason">Grund auswählen</string>
+    <string name="send">Absenden</string>
+    <string name="success">Erfolg</string>
+    <string name="task_reported">Die Übung wurde gemeldet.</string>
+    <string name="task_deleted">Die Übung wurde gelöscht.</string>
+    <string name="comment_reported">Der Kommentar wurde gemeldet.</string>
+    <string name="new_task_published">Neue Übung veröffentlicht</string>
+    <string name="new_comment">Neuer Kommentar: %s</string>
+    <string name="image_saved">Bild gespeichert</string>
+    <string name="save_image">Bild speichern</string>
+    <string name="search">Suche</string>
+    <string name="fullscreen">Vollbild</string>
+    <string name="infos">Informationen</string>
+    <string name="extra_data">Optionale Angaben</string>
+    <string name="rating_count">Bewertungen: %d</string>
+    <string name="imprint">Impressum</string>
+    <string name="show_more">Mehr anzeigen</string>
+    <string name="write_comment_placeholder">Kommentar schreiben…</string>
+    <string name="pending_verification">Bestätigung ausstehend</string>
+    <string name="last_updated">Letzte Änderung: %s</string>
+    <string name="class_string">%d. Klasse</string>
+    <string name="grade">Jahrgang: %s</string>
+    <string name="grade_colon">Jahrgang:</string>
+    <string name="grade_hint">Jahrgang</string>
+    <string name="school_form">Schulform: %s</string>
+    <string name="school_form_colon">Schulform:</string>
+    <string name="school_form_hint">Schulform</string>
+    <string name="federal_state">Bundesland: %s</string>
+    <string name="federal_state_colon">Bundesland:</string>
+    <string name="federal_state_hint">Bundesland</string>
+    <string name="creator">Urheber/in: %s</string>
+    <string name="creator_hint">Urheber/in</string>
+    <string name="creator_hint_optional">Urheber/in (optional)</string>
+    <string name="not_specified">nicht angegeben</string>
+    <string name="missing_email">Keine E-Mail-Adresse angegeben</string>
+    <string name="missing_password">Kein Passwort angegeben</string>
+    <string-array name="create_task_options">
+        <item>Themenschwerpunkte</item>
+        <item>Übungsinformationen</item>
+        <item>Schulinformationen</item>
+    </string-array>
+    <string name="general_information">Allgemeine Informationen</string>
+    <string name="task_information">Übungsinformationen</string>
+    <string name="school_information">Schulinformationen</string>
+    <string name="about_examshare">Über ExamShare</string>
+    <string name="support_developer">Entwickler unterstützen</string>
+    <string name="share">Teilen</string>
+    <string name="rotate">Rotieren</string>
+    <string name="sort_by_hint">Sortieren nach:</string>
+    <string-array name="sort_by">
+        <item>Uploaddatum</item>
+        <item>Bewertung</item>
+    </string-array>
+    <string-array name="upload_time">
+        <item>Beliebig</item>
+        <item>Heute</item>
+        <item>Diese Woche</item>
+        <item>Dieser Monat</item>
+        <item>Dieses Jahr</item>
+    </string-array>
+    <string-array name="classes">
+        <item>Unterstufe (Klassen 1–6)</item>
+        <item>Mittelstufe (Klassen 7–10)</item>
+        <item>Oberstufe (Klassen 11–13)</item>
+    </string-array>
+    <string-array name="school_forms">
+        <item>Gymnasium</item>
+        <item>Sekundarschule</item>
+        <item>Förderschule</item>
+        <item>Grundschule</item>
+        <item>Realschule</item>
+        <item>Hauptschule</item>
+        <item>Gesamtschule</item>
+    </string-array>
+    <string-array name="federal_states">
+        <item>Baden-Württemberg</item>
+        <item>Bayern</item>
+        <item>Berlin</item>
+        <item>Brandenburg</item>
+        <item>Bremen</item>
+        <item>Hamburg</item>
+        <item>Hessen</item>
+        <item>Mecklenburg-Vorpommern</item>
+        <item>Niedersachsen</item>
+        <item>Nordrhein-Westfalen</item>
+        <item>Rheinland-Pfalz</item>
+        <item>Saarland</item>
+        <item>Sachsen</item>
+        <item>Sachsen-Anhalt</item>
+        <item>Schleswig-Holstein</item>
+        <item>Thüringen</item>
+    </string-array>
+    <string name="password_too_short">Das Passwort muss mindestens sechs Zeichen lang sein.</string>
+    <string name="username_too_short">Benutzername ist zu kurz</string>
+    <string name="username_two_letters_required">Füge mindestens 2 Buchstaben hinzu</string>
+    <string name="username_only_specific_letters">Verwende nur Buchstaben, Zahlen und \'_\'</string>
+    <string-array name="username_errors">
+        <item>Verwende nur Buchstaben, Zahlen und \'_\'</item>
+        <item>Füge mindestens 2 Buchstaben hinzu</item>
+        <item>Benutzername ist zu kurz</item>
+    </string-array>
+    <string name="rate_task">Bewerte die Übung</string>
+    <string name="rate">Bewerten</string>
+    <string name="cancel">Abbrechen</string>
+    <string name="back">Zurück</string>
+    <string name="support_app">Unterstütze ExamShare</string>
+    <string name="support_app_message">Hilf uns bei der Finanzierung und Weiterentwicklung der Plattform. Wir freuen uns über jede Spende.</string>
+    <string name="donate">Spenden</string>
+    <string name="average_rating">Bewertung:</string>
+    <string name="skip">Überspringen</string>
+    <string name="retry">Erneut versuchen</string>
+
+    <string name="missing_value">Ungültige Eingabe</string>
+
+    <string name="time_long">%1$tR Uhr</string>
+    <string name="date_medium">%1$td.%1$tm.%1$tY</string>
+    <string name="date_long">%1$td. %1$tB %1$tY</string>
+    <string name="date_time_short">%1$td.%1$tm.%1$ty %1$tR Uhr</string>
+    <string name="date_time_medium">%1$td.%1$tm.%1$tY %1$tR Uhr</string>
+    <string name="date_time_long">%1$td. %1$tB %1$tY %1$tR Uhr</string>
+</resources>

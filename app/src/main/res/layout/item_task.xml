@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="de.twisted.examshare.ui.taskcommon.TaskListMode"/>
+
+        <variable
+                name="task"
+                type="de.twisted.examshare.data.models.Task" />
+
+        <variable
+                name="listMode"
+                type="de.twisted.examshare.ui.taskcommon.TaskListMode" />
+
+        <variable
+                name="actions"
+                type="de.twisted.examshare.ui.taskcommon.TaskActions" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+            android:id="@+id/card_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:onClick="@{() -> actions.openTaskDetailsActivity(task)}">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="11dp"
+                android:layout_marginBottom="11dp">
+
+            <TextView
+                    android:id="@+id/task_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="13dp"
+                    android:layout_marginEnd="7dp"
+                    android:ellipsize="end"
+                    android:maxLines="3"
+                    android:text="@{task.title}"
+                    android:textColor="?android:textColorPrimary"
+                    android:textSize="19sp"
+                    app:layout_constraintEnd_toStartOf="@id/task_like_button"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Gedichtsinterpretation" />
+
+            <ImageView
+                    android:id="@+id/task_like_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="3dp"
+                    android:clickable="true"
+                    android:onClick="@{() -> actions.onLikeClicked(task)}"
+                    android:src="@{task.isFavorite ? @drawable/ic_favorite : @drawable/ic_favorite_border}"
+                    app:layout_constraintEnd_toStartOf="@id/task_options_menu"
+                    app:layout_constraintTop_toTopOf="@id/task_title"
+                    tools:srcCompat="@drawable/ic_favorite"/>
+
+            <ImageView
+                    android:id="@+id/task_options_menu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="3dp"
+                    android:clickable="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/task_title"
+                    app:srcCompat="@drawable/ic_more_vert_24dp" />
+
+            <TextView
+                    android:id="@+id/task_created_at"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{@string/date_time_medium(task.createdAt)}"
+                    android:textColor="?android:textColorPrimary"
+                    android:textSize="15sp"
+                    app:layout_constraintStart_toStartOf="@id/task_title"
+                    app:layout_constraintTop_toBottomOf="@id/task_title"
+                    tools:text="17. Juni 2018 17:34 Uhr"/>
+
+            <TextView
+                    android:id="@+id/task_author"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@{@string/published_by(task.author)}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/task_created_at"
+                    app:layout_constraintTop_toBottomOf="@id/task_created_at"
+                    tools:text="Veröffentlicht von: Twister21"/>
+
+            <TextView
+                    android:id="@+id/task_subject"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{@string/subject_dyn(task.subject)}"
+                    app:layout_constraintStart_toStartOf="@id/task_author"
+                    app:layout_constraintTop_toBottomOf="@id/task_author"
+                    app:visible="@{listMode != TaskListMode.SUBJECT}"
+                    tools:visibility="gone"/>
+
+            <TextView
+                    android:id="@+id/task_keywords"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:text="@{@string/content(task.keywordsString)}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/task_subject"
+                    app:layout_constraintTop_toBottomOf="@id/task_subject"
+                    tools:text="Themen: Lyrik, Barock, Vanitas-Motiv"/>
+
+            <TextView
+                    android:id="@+id/task_rating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rating"
+                    app:layout_constraintStart_toStartOf="@id/task_keywords"
+                    app:layout_constraintTop_toBottomOf="@id/task_keywords" />
+
+            <androidx.appcompat.widget.AppCompatRatingBar
+                    android:id="@+id/task_rating_bar"
+                    style="?ratingBarStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:isIndicator="true"
+                    android:rating="@{task.rating}"
+                    app:layout_constraintBottom_toBottomOf="@id/task_rating"
+                    app:layout_constraintStart_toEndOf="@id/task_rating"
+                    tools:rating="4.5"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

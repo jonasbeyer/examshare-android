@@ -1,0 +1,29 @@
+# IntelliJ project files
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# Netbeans project files
+nbproject/
+nbactions.xml
+
+# Eclipse project files
+.classpath
+.project
+.settings/
+
+# Maven
+build.xml
+dependency-reduced-pom.xml
+target/
+
+# Other
+manifest.mf
+local.properties
+build/
+bin/
+dist/
+.gradle/
+libs/
+release/

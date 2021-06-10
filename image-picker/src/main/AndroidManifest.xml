@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="de.twisted.imagepicker">
+
+    <application
+            android:largeHeap="true"
+            android:theme="@style/AppTheme.ImagePicker">
+        <activity
+                android:name=".activities.ImagePicker"
+                android:screenOrientation="portrait"
+                android:theme="@style/PixAppTheme"/>
+        <activity
+                android:name=".imageeditengine.ImageEditActivity"
+                android:screenOrientation="portrait"
+                android:theme="@style/ImageEditTheme">
+        </activity>
+    </application>
+
+</manifest>

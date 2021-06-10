@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "915966493168",
+    "firebase_url": "https://examshare-11793.firebaseio.com",
+    "project_id": "examshare-11793",
+    "storage_bucket": "examshare-11793.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:915966493168:android:128f22a4494e17e8",
+        "android_client_info": {
+          "package_name": "de.twisted.examshare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "915966493168-ep85d8vs2j7banj7n9hkhe71pnle4fqa.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "915966493168-ep85d8vs2j7banj7n9hkhe71pnle4fqa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAY185ovx2AKQ0BoNvhbULjQsH-zscH5_A"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

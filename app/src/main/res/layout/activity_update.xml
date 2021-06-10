@@ -1,0 +1,155 @@
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--              xmlns:tools="http://schemas.android.com/tools"-->
+<!--              xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--              android:layout_width="match_parent"-->
+<!--              android:layout_height="match_parent"-->
+<!--              android:orientation="vertical"-->
+<!--              tools:context=".ui.addedittask.UpdateActivity">-->
+
+<!--    <com.google.android.material.appbar.AppBarLayout-->
+<!--            android:id="@+id/appBarLayout"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:background="?attr/colorPrimary"-->
+<!--            android:theme="@style/ThemeOverlay.ExamShare.AppBar">-->
+
+<!--        <androidx.appcompat.widget.Toolbar-->
+<!--                android:id="@+id/toolbar"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="?attr/actionBarSize">-->
+
+<!--            <de.twisted.examshare.ui.shared.widgets.ExamSpinner-->
+<!--                    android:id="@+id/subjectSpinner"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--        </androidx.appcompat.widget.Toolbar>-->
+
+<!--        <ProgressBar-->
+<!--                android:id="@+id/progressBar"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:indeterminate="true"-->
+<!--                android:layout_marginTop="-9dp"-->
+<!--                android:layout_marginBottom="-9dp"-->
+<!--                android:visibility="gone"-->
+<!--                style="?android:attr/progressBarStyleHorizontal"/>-->
+<!--    </com.google.android.material.appbar.AppBarLayout>-->
+
+<!--    <ScrollView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent">-->
+
+<!--        <LinearLayout-->
+<!--                android:id="@+id/layout"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="vertical"-->
+<!--                android:layout_marginStart="20dp"-->
+<!--                android:layout_marginEnd="20dp">-->
+
+<!--            <EditText-->
+<!--                    android:id="@+id/title"-->
+<!--                    android:layout_marginTop="20dp"-->
+<!--                    android:maxLength="@integer/max_title_length"-->
+<!--                    android:singleLine="true"-->
+<!--                    android:inputType="textNoSuggestions"-->
+<!--                    android:hint="@string/task_title"-->
+<!--                    android:background="@drawable/form_edittext"-->
+<!--                    android:drawableStart="@drawable/ic_edit"-->
+<!--                    android:drawablePadding="20dp"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"/>-->
+
+<!--            <de.twisted.examshare.ui.shared.widgets.ExamSpinner-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="10dp"-->
+<!--                    android:id="@+id/spinner"/>-->
+
+<!--            <de.twisted.taggroup.TagGroup-->
+<!--                    android:id="@+id/keywords"-->
+<!--                    android:layout_marginEnd="20dp"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    app:atg_textSize="18sp"-->
+<!--                    app:atg_maxLength="@integer/max_tag_length"-->
+<!--                    app:atg_inputHint="@string/keyword_hint"-->
+<!--                    app:atg_borderColor="@color/colorPrimary"-->
+<!--                    app:atg_textColor="@color/colorPrimary"-->
+<!--                    app:atg_checkedBackgroundColor="@color/colorPrimary"-->
+<!--                    app:atg_checkedBorderColor="@color/colorPrimary"/>-->
+
+<!--            <EditText-->
+<!--                    android:id="@+id/grade"-->
+<!--                    android:layout_marginTop="5dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:singleLine="true"-->
+<!--                    android:inputType="number"-->
+<!--                    android:hint="@string/grade_hint"-->
+<!--                    android:background="@drawable/form_edittext"-->
+<!--                    android:drawableStart="@drawable/ic_class"-->
+<!--                    android:drawablePadding="20dp"-->
+<!--                    android:visibility="gone"/>-->
+
+<!--            <EditText-->
+<!--                    android:id="@+id/creator"-->
+<!--                    android:maxLength="@integer/max_creator_length"-->
+<!--                    android:singleLine="true"-->
+<!--                    android:inputType="textNoSuggestions"-->
+<!--                    android:hint="@string/creator_hint_optional"-->
+<!--                    android:background="@drawable/form_edittext"-->
+<!--                    android:drawableStart="@drawable/ic_person"-->
+<!--                    android:drawablePadding="20dp"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="15dp"-->
+<!--                    android:visibility="gone"-->
+<!--                    android:imeOptions="actionDone"/>-->
+
+<!--            <de.twisted.examshare.ui.shared.widgets.DropDownInput-->
+<!--                    android:id="@+id/schoolForm"-->
+<!--                    android:layout_marginTop="5dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:maxLength="@integer/max_school_length"-->
+<!--                    android:singleLine="true"-->
+<!--                    android:inputType="textNoSuggestions"-->
+<!--                    android:hint="@string/school_form_hint"-->
+<!--                    android:background="@drawable/form_edittext"-->
+<!--                    android:drawableStart="@drawable/ic_school"-->
+<!--                    android:drawablePadding="20dp"-->
+<!--                    android:visibility="gone"/>-->
+
+<!--            <de.twisted.examshare.ui.shared.widgets.DropDownInput-->
+<!--                    android:id="@+id/federalState"-->
+<!--                    android:maxLength="@integer/max_federal_state_length"-->
+<!--                    android:singleLine="true"-->
+<!--                    android:inputType="textNoSuggestions"-->
+<!--                    android:hint="@string/federal_state_hint"-->
+<!--                    android:background="@drawable/form_edittext"-->
+<!--                    android:drawableStart="@drawable/ic_map"-->
+<!--                    android:drawablePadding="20dp"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="15dp"-->
+<!--                    android:visibility="gone"-->
+<!--                    android:imeOptions="actionDone"/>-->
+
+<!--            <Button-->
+<!--                    android:id="@+id/update"-->
+<!--                    android:text="@string/update"-->
+<!--                    android:background="@drawable/form_button"-->
+<!--                    android:textColor="@android:color/white"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="30dp"-->
+<!--                    android:layout_marginBottom="5dp"/>-->
+<!--        </LinearLayout>-->
+<!--    </ScrollView>-->
+<!--</LinearLayout>-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></LinearLayout>

@@ -1,0 +1,112 @@
+import de.twisted.examshare.buildsrc.Dependencies
+
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion buildConfig.compileSdkVersion
+    defaultConfig {
+        applicationId "de.twisted.examshare"
+        minSdkVersion buildConfig.minSdkVersion
+        targetSdkVersion buildConfig.targetSdkVersion
+        versionCode buildConfig.versionCode
+        versionName buildConfig.versionName
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        multiDexEnabled true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+    androidExtensions {
+        experimental = true
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+
+    buildTypes {
+        debug {
+            buildConfigField("String", "API_ENDPOINT", "\"http://192.168.2.106:8082/api/v1/\"")
+        }
+
+        release {
+            minifyEnabled true
+            debuggable false
+            proguardFiles getDefaultProguardFile('proguard-android.txt')
+
+            buildConfigField("String", "API_ENDPOINT", "\"https://examshare.twisted-it.de/api/v1/\"")
+        }
+    }
+}
+
+dependencies {
+    implementation project(':image-picker')
+    implementation project(':tag-group')
+
+    implementation Dependencies.Kotlin.stdlib
+
+    implementation Dependencies.AndroidX.coreKtx
+    implementation Dependencies.AndroidX.appcompat
+    implementation Dependencies.AndroidX.preference
+    implementation Dependencies.AndroidX.constraintlayout
+    implementation Dependencies.AndroidX.swiperefresh
+    implementation Dependencies.AndroidX.Fragment.fragmentKtx
+
+    implementation Dependencies.Google.material
+
+    implementation Dependencies.AndroidX.Room.runtime
+    implementation Dependencies.AndroidX.Room.rxjava
+    kapt Dependencies.AndroidX.Room.compiler
+
+    implementation Dependencies.timber
+
+    implementation Dependencies.imageZoom
+    implementation Dependencies.pageIndicator
+    implementation Dependencies.inkPageIndicator
+
+    implementation Dependencies.Dagger.dagger
+    implementation Dependencies.Dagger.androidSupport
+    kapt Dependencies.Dagger.compiler
+    kapt Dependencies.Dagger.androidProcessor
+
+    implementation Dependencies.OkHttp.okhttp
+    implementation Dependencies.OkHttp.loggingInterceptor
+
+    implementation Dependencies.Retrofit.retrofit
+    implementation Dependencies.Retrofit.rxAdapter
+    implementation Dependencies.Retrofit.gsonConverter
+
+    implementation Dependencies.Rx.kotlin
+    implementation Dependencies.Rx.android
+
+    implementation Dependencies.Glide.glide
+    implementation Dependencies.Glide.okhttpAdapter
+    kapt Dependencies.Glide.compiler
+
+    implementation Dependencies.Google.firebaseCore
+    implementation Dependencies.Google.firebaseMessaging
+
+    testImplementation Dependencies.junit
+    testImplementation Dependencies.mockito
+    testImplementation Dependencies.AndroidX.Test.core
+    testImplementation Dependencies.AndroidX.Test.runner
+    testImplementation Dependencies.AndroidX.Test.espressoCore
+}
+
+//apply plugin: 'com.google.gms.google-services'

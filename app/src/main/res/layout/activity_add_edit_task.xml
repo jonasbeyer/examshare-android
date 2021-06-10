@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="java.util.Collections" />
+
+        <variable
+                name="viewModel"
+                type="de.twisted.examshare.ui.addedittask.AddEditViewModel" />
+
+        <variable
+                name="task"
+                type="de.twisted.examshare.data.models.Task" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".ui.addedittask.AddEditTaskActivity">
+
+        <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="16dp"
+                    android:paddingTop="16dp"
+                    android:paddingEnd="16dp"
+                    android:paddingBottom="16dp">
+
+                <TextView
+                        android:id="@+id/section_header_task_info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/task_information"
+                        android:textAppearance="@style/TextAppearance.ExamShare.SectionHeader"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/title_text_input_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        app:layout_constraintTop_toBottomOf="@id/section_header_task_info"
+                        app:startIconDrawable="@drawable/ic_edit">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/task_title"
+                            android:inputType="textNoSuggestions"
+                            android:maxLength="@integer/max_title_length"
+                            android:singleLine="true"
+                            android:text="@{task.title}" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/school_form_input_layout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        app:layout_constraintTop_toBottomOf="@id/title_text_input_layout"
+                        app:startIconDrawable="@drawable/ic_school">
+
+                    <AutoCompleteTextView
+                            android:id="@+id/school_form"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/school_form_hint"
+                            android:inputType="none"
+                            android:maxLength="@integer/max_school_length"
+                            android:singleLine="true"
+                            android:text='@{task.schoolForm ?? viewModel.currentUserInfo.getStringProperty("schoolForm")}' />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/federal_state_input_layout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        app:layout_constraintTop_toBottomOf="@+id/school_form_input_layout"
+                        app:startIconDrawable="@drawable/ic_map">
+
+                    <AutoCompleteTextView
+                            android:id="@+id/federal_state"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/federal_state_hint"
+                            android:inputType="none"
+                            android:maxLength="@integer/max_federal_state_length"
+                            android:singleLine="true"
+                            android:text='@{task.federalState ?? viewModel.currentUserInfo.getStringProperty("federalState")}' />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <LinearLayout
+                        android:id="@+id/grade_and_creator_text_input_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal"
+                        app:layout_constraintTop_toBottomOf="@id/federal_state_input_layout">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/creator_text_input_layout"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            app:startIconDrawable="@drawable/ic_person">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/creator"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/creator_hint_optional"
+                                android:inputType="textNoSuggestions"
+                                android:maxLength="@integer/max_creator_length"
+                                android:singleLine="true"
+                                android:text="@{task.creator}" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <Space
+                            android:layout_width="10dp"
+                            android:layout_height="0dp" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/grade_text_input_layout"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            app:startIconDrawable="@drawable/ic_class">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/grade"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/grade_hint"
+                                android:inputType="number"
+                                android:singleLine="true"
+                                android:text='@{String.valueOf(task != null ? task.grade : viewModel.currentUserInfo.getIntProperty("grade"))}' />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+                <TextView
+                        android:id="@+id/section_keywords"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="@string/keywords"
+                        android:textAppearance="@style/TextAppearance.ExamShare.SectionHeader"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/grade_and_creator_text_input_layout" />
+
+                <de.twisted.taggroup.TagGroup
+                        android:id="@+id/keywords"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        app:atg_borderColor="?colorPrimary"
+                        app:atg_checkedBackgroundColor="?colorPrimary"
+                        app:atg_checkedBorderColor="?colorPrimary"
+                        app:atg_inputHint="@string/keyword_hint"
+                        app:atg_maxLength="@integer/max_tag_length"
+                        app:atg_textColor="?colorPrimary"
+                        app:atg_textSize="18sp"
+                        app:layout_constraintTop_toBottomOf="@id/section_keywords"
+                        app:tags="@{task.keywords ?? Collections.EMPTY_LIST}" />
+
+                <TextView
+                        android:id="@+id/section_header_images"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="@string/add_images"
+                        android:textAppearance="@style/TextAppearance.ExamShare.SectionHeader"
+                        app:layout_constraintStart_toStartOf="@id/title_text_input_layout"
+                        app:layout_constraintTop_toBottomOf="@id/keywords" />
+
+                <com.google.android.material.tabs.TabLayout
+                        android:id="@+id/tab_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        app:layout_constraintTop_toBottomOf="@id/section_header_images"
+                        app:tabGravity="fill"
+                        app:tabMaxWidth="0dp"
+                        app:visible="@{task == null}">
+
+                    <com.google.android.material.tabs.TabItem
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            tools:text="Aufgabenblätter (2)" />
+
+                    <com.google.android.material.tabs.TabItem
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            tools:text="Lösungsblätter (3)" />
+                </com.google.android.material.tabs.TabLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recycler_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:overScrollMode="never"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tab_layout"
+                        app:visible="@{task == null}"
+                        tools:itemCount="2"
+                        tools:layoutManager="GridLayoutManager"
+                        tools:listitem="@layout/item_grid_image"
+                        tools:spanCount="3" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floation_action_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:layout_margin="@dimen/fab_margin"
+                app:srcCompat="@drawable/ic_photo_camera"
+                app:visible="@{task == null}" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>
